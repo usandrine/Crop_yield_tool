@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Crop Yield Tool</title>
+    <link rel="stylesheet" href="{% static 'yield_manager/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Crop Yield Tool</h1>
+    </header>
+
+    <div class="container">
+        <h2>Welcome to the Crop Yield Tool</h2>
+        <p>Select a crop to view details:</p>
+        <ul class="crop-list">
+            {% for crop in crops %}
+                <li>
+                    <a href="{% url 'crop_detail' crop.id %}" class="btn">{{ crop.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        &copy; 2024 Crop Yield Tool. All rights reserved.
+    </footer>
+    <script src="{% static 'yield_manager/js/script.js' %}"></script>
+</body>
+</html>

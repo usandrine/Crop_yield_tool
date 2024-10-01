@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Detail - Crop Yield Tool</title>
+    <link rel="stylesheet" href="{% static 'yield_manager/css/styles.css' %}">
+    
+</head>
+<body>
+    <header>
+        <h1>Crop Yield Tool</h1>
+    </header>
+
+    <div class="container">
+        <h2>{{ crop.name }} Details</h2>
+        <p><strong>Category:</strong> {{ crop.category }}</p>
+        <p><strong>Expected Yield:</strong> {{ crop.expected_yield }} kg</p>
+        <p><strong>Region:</strong> {{ crop.region }}</p>
+        <p><strong>Description:</strong> {{ crop.description }}</p>
+        <p><strong>Optimal conditions:</strong> {{ crop.optimal_conditions }}</p>
+        <p><strong>planting guidelines:</strong> {{ crop.planting_guidelines }}</p>
+        <p><strong>pest management:</strong> {{ crop.pest_management }}</p>
+        <p><strong>nutritional requirements:</strong> {{ crop.nutritional_requirements }}</p>
+        <p><strong>harvesting info:</strong> {{ crop.harvesting_info }}</p>
+        <p><strong>Sustainability practices:</strong> {{ crop.sustainability_practices }}</p>
+
+
+        <a href="{% url 'home' %}" class="btn">Back to Home</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Crop Yield Tool. All rights reserved.
+    </footer>
+    <script src="{% static 'yield_manager/js/script.js' %}"></script>
+</body>
+</html>
